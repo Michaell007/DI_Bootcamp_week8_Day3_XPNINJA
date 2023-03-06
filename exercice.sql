@@ -8,7 +8,7 @@ WHERE (rating = 'G' OR rating = 'PG') AND (rentals.rental_id IS NULL OR rentals.
 --Create a new table which will represent a waiting list for children’s movies. This will allow a child to add their name to the list until the DVD is available (has been returned). Once the child takes the DVD, their name should be removed from the waiting list (ideally using triggers, but we have not learned about them yet. Let’s assume that our Python program will manage this). Which table references should be included?
 
 CREATE TABLE waiting_list (
-    waiting_id SERIAL PRIMARY KEY,
+    waiting_id SERIAL PRIMARY KEY, 
     movie_id INTEGER REFERENCES movies(movie_id),
     child_name VARCHAR(255),
     date_added DATE
